@@ -1,4 +1,4 @@
-/*package casestudy;
+package casestudy;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -47,4 +47,4 @@ public class casestudy2 {
 	}
 
 
-}*/
+}

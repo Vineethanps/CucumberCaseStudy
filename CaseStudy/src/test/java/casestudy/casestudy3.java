@@ -1,8 +1,7 @@
 package casestudy;
 
-import java.util.concurrent.TimeUnit;
 
-import javax.swing.text.html.parser.Element;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -75,10 +74,11 @@ public class casestudy3 {
 	}
 
 	@When("user clicks on proceedtopay")
-	public void usert_clicks_on_cproceedtopay() throws InterruptedException {
+	public void usert_clicks_on_cproceedtopay()  {
 	    // Write code here that turns the phrase above into concrete actions
 		driver.findElement(By.xpath("/html/body/b/div/div/div[1]/div/div[2]/div[3]/div/form[2]/input")).click();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+		
 	}
 
 	@When("user selects on AndhraBank")
@@ -86,10 +86,12 @@ public class casestudy3 {
 	    // Write code here that turns the phrase above into concrete actions
 	   //element.
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[@id='swit']/div[1]/label/i")).click();
+		//Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+		//driver.findElement(By.xpath("//div[@id='swit']/div[1]/label/i")).click();
+		driver.findElement(By.xpath("//label[contains(text(),'Andhra Bank')]")).click();
 	}
-//
+
 @When("usert clicks on continue")
 	public void usert_clicks_on_continue() {
 	    // Write code here that turns the phrase above into concrete actions
@@ -98,7 +100,7 @@ public class casestudy3 {
 	
 }
 //
-@When("user clicks on login button{int}")
+@Then("user clicks on login button{int}")
 public void user_clicks_on_login_button(Integer int1) {
 //	    // Write code here that turns the phrase above into concrete actions
 //	    throw new cucumber.api.PendingException();

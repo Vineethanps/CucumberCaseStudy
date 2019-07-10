@@ -15,7 +15,7 @@ And user selects on AndhraBank
 And usert clicks on continue
 #And user enters username "<username1>"
 #And user enters password "<passWord1>"
-And user clicks on login button1
+Then user clicks on login button1
 Examples:
 |username  |passWord |data|
 |lalitha   |password123|HeadPhone|

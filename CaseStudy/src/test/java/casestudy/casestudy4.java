@@ -1,10 +1,9 @@
 package casestudy;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.Given;
@@ -55,11 +54,18 @@ public class casestudy4 {
 
 	@Then("TestMeApp doesn't display the cart icon")
 	public void testmeapp_doesn_t_display_the_cart_icon() {
-	    // Write code here that turns the phrase above into concrete actions
-	//driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/div/div/div[2]/center/a")).click();
-	//driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-	Assert.assertTrue(driver.findElement(By.cssSelector("a[href='displayCart.htm']")).isEnabled());
+	 try {
+		 WebElement addtocart=driver.findElement(By.xpath("//a[contains(text(),'Cart')]"));
+		 
+	 }
+	 catch(Exception e) {
+		 System.out.println(e.getMessage());
+	 }
+	//Assert.assertFalse(driver.findElement(By.xpath("//a[contains(text(),'Cart')]")).isDisplayed());
+	//Assert.assertFalse(driver.findElement(By.cssSelector("a[href='displayCart.htm']")).isDisplayed());
 	//driver.findElement(By.cssSelector("a[href='displayCart.htm']")).click();
+	//System.out.println("The add to cart button is disabled");
+
 	}
 
 }

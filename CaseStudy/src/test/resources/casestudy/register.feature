@@ -1,7 +1,7 @@
 Feature: Register feature for test me app
 Scenario: Register scenario
 Given url of testmeapp "http://10.232.237.143:443/TestMeApp/RegisterUser.htm"
-When  user enters "Granger" as username
+When  user enters "weasley" as username
 And user enters "vini" as firstname
 And user enters "reddy" as lastname
 And user enters "potter123" as password
